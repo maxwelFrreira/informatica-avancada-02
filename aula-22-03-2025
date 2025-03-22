@@ -1,0 +1,27 @@
+create table maxwel.imoveis(
+indentificador serial not null primary key,
+nome varchar(80) not null,
+endereco varchar(80) not null,
+data_de_construcao date not null,
+corretor_do_imovel varchar(80) not null,
+descricao varchar(250) not null,
+valor_do_imovel integer not null,
+cidade varchar (30) not null,
+estadado varchar (30) not null,
+tamanho integer not null,
+comodos integer not null
+);
+/*altera uma tabela alterando uma coluna exemplo: alterar coluna valor_do_imovel para tipo float*/
+alter table maxwel.imoveis alter column valor_do_imovel type float;
+
+/*altera uma tabela alterando nome uma coluna exemplo:valor_do_imovel para valor */
+alter table maxwel.imoveis rename column valor_do_imovel to valor;
+
+/*altera uma tabela adicionando uma coluna exemplo:coluna_nova*/
+alter table maxwel.imoveis add column coluna_nova  varchar(80) not null;
+
+/*altera uma tabela removendo uma coluna exemplo:coluna_nova*/
+alter table maxwel.imoveis drop column coluna_nova;
+
+/*criar um tipo ENUM(lista de valores) com o nome finalidade */
+create type finalidade as enum('vendas', 'locacao');
